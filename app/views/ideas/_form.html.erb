@@ -1,0 +1,25 @@
+
+
+<% if @idea.errors.any? %>
+<h4>The following errors prevented you from creating the new idea</h4>
+    <ul>
+        <% @idea.errors.full_messages.each do |msg|%>
+        <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%=form_for @idea do |f|%>
+    <p>
+        <%= f.label :title %> <br />
+        <%= f.text_field :title, cols: 10 %>
+    </p>
+
+    <p>
+        <%= f.label :description %> <br />
+        <%= f.text_area :description, cols: 10, rows: 3%>
+    </p>
+
+<p><%= f.submit%></p>
+
+<% end %>

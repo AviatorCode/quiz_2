@@ -1,0 +1,19 @@
+<div >
+  <% @ideas.each do |idea| %>
+    <div>
+     <h5><%= link_to idea.title, idea_path(idea) %></h5>
+     </div>
+
+         <div>
+         <%= idea.description %>
+         </div>
+     
+        <div>
+            <%=link_to 'Edit', edit_idea_path(idea)%>
+        </div>
+        <div>
+            <%=link_to 'Delete', idea_path(idea), method: :delete, data:{confirm: "Do you want to delete?"}%>
+        </div>
+  <% end %>
+
+</div>
